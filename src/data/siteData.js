@@ -3,6 +3,7 @@ export const COMPANY = {
   tagline: "Designing Excellence Since 1983",
   shortName: "BIPL",
   founded: 1983,
+  logo: "/logo.png",
   phone: "+91-11-4XXX-XXXX",
   email: "info@boutiqueinternational.com",
   address: { line1: "Industrial Area", city: "New Delhi", state: "Delhi", country: "India", pin: "110XXX" },

@@ -53,18 +53,18 @@ export default function Cursor() {
         ref={dotRef}
         style={{
           position: 'fixed', width: 8, height: 8,
-          background: '#c9a227', borderRadius: '50%',
+          background: '#00D9FF', borderRadius: '50%',
           pointerEvents: 'none', zIndex: 99999,
           transform: 'translate(-50%,-50%)',
           transition: 'transform 0.2s ease, background 0.2s',
-          mixBlendMode: 'difference',
+          mixBlendMode: 'multiply',
         }}
       />
       <div
         ref={ringRef}
         style={{
           position: 'fixed', width: 36, height: 36,
-          border: '1px solid rgba(201,162,39,0.6)',
+          border: '1.5px solid rgba(0,217,255,0.6)',
           borderRadius: '50%',
           pointerEvents: 'none', zIndex: 99998,
           transform: 'translate(-50%,-50%)',
