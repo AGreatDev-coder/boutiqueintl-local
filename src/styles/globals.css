@@ -186,3 +186,82 @@ h1, h2, h3, h4, h5, h6 { color: var(--slate-900); font-weight: 600; }
 @media (max-width: 768px) {
   body { font-size: 14px; }
 }
+
+/* ─── Day 3: Hero & Statistics Animations ─────────────────────────────────── */
+
+.hero-title {
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.statistics-card {
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.statistics-card:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 12px 32px rgba(0, 217, 255, 0.15);
+}
+
+.counter-number {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUpStagger {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideInRight var(--transition-slow) ease forwards;
+}
+
+/* ─── Scroll Indicator Animation ──────────────────────────────────────────── */
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* ─── Hero Section Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 4rem);
+  }
+
+  .statistics-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* ─── Smooth Section Transitions ──────────────────────────────────────────── */
+section {
+  transition: background-color var(--transition-base);
+}
