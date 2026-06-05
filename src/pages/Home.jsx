@@ -2,6 +2,9 @@ import { motion } from 'framer-motion'
 import Hero from '../components/sections/Hero'
 import CompanyOverview from '../components/sections/CompanyOverview'
 import StatisticsCounter from '../components/sections/StatisticsCounter'
+import ProductCategories from '../components/sections/ProductCategories'
+import ManufacturingProcess from '../components/sections/ManufacturingProcess'
+import GlobalMarkets from '../components/sections/GlobalMarkets'
 
 export default function Home() {
   return (
@@ -10,14 +13,15 @@ export default function Home() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      {/* Hero Section */}
+      {/* Day 3 Sections */}
       <Hero />
-
-      {/* Company Overview */}
       <CompanyOverview />
-
-      {/* Statistics Counter */}
       <StatisticsCounter />
+
+      {/* Day 4 Sections */}
+      <ProductCategories />
+      <ManufacturingProcess />
+      <GlobalMarkets />
 
       {/* Spacer for upcoming sections */}
       <section className="bg-white py-24">
@@ -38,7 +42,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Product Categories • Manufacturing Process • Client Showcase • Sustainability • And More...
+            Client Testimonials • Sustainability • Certifications • Contact CTA • And More...
           </motion.p>
         </div>
       </section>
