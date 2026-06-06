@@ -6,9 +6,18 @@ export const HERO_CONFIG = {
   description: "Four decades of premium apparel manufacturing excellence. From concept to export, we deliver quality that exceeds expectations.",
   cta_primary: "Explore Our Work",
   cta_secondary: "Get in Touch",
-  video_bg: "https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=1600&q=80",
-  image_bg: "https://images.unsplash.com/photo-1554487981-e6935c92b07d?w=1600&q=80",
 };
+
+// Updated background carousel images (manufacturing facility showcase)
+export const CAROUSEL_IMAGES = [
+  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80",
+  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80",
+  "https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=1600&q=80",
+  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80",
+  "https://images.unsplash.com/photo-1551028719-00167b16ebc5?w=1600&q=80",
+  "https://images.unsplash.com/photo-1489749798305-4fea3ba63d60?w=1600&q=80",
+  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80",
+];
 
 export const OVERVIEW_CONFIG = {
   headline: "Who We Are",
@@ -22,35 +31,42 @@ export const OVERVIEW_CONFIG = {
   ],
 };
 
+// Updated statistics based on new data (Image 2)
 export const FEATURES = [
   {
-    number: "40+",
+    number: "40",
     label: "Years of Excellence",
     description: "Four decades of manufacturing expertise and innovation",
+    suffix: "+",
   },
   {
-    number: "500+",
-    label: "Global Clients",
+    number: "150",
+    label: "Global Brands & Clients",
     description: "Trusted by leading brands across the world",
+    suffix: "+",
   },
   {
-    number: "50M+",
-    label: "Pieces Exported",
+    number: "50",
+    label: "Million Garments Exported",
     description: "Millions of garments shipped to 25+ countries",
+    suffix: "M+",
   },
   {
-    number: "98%",
-    label: "On-Time Delivery",
+    number: "98",
+    label: "On-Time Delivery Rate",
     description: "Industry-leading reliability and consistency",
+    suffix: "%",
   },
   {
-    number: "3000+",
-    label: "Skilled Artisans",
+    number: "3000",
+    label: "Skilled Professionals",
     description: "Expert craftspeople dedicated to perfection",
+    suffix: "+",
   },
   {
-    number: "25+",
+    number: "25",
     label: "Countries Served",
     description: "Global reach with local expertise",
+    suffix: "+",
   },
 ];

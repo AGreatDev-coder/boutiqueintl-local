@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { HERO_CONFIG } from '../../data/heroData'
+import { HERO_CONFIG, CAROUSEL_IMAGES } from '../../data/heroData'
+import ImageCarousel from '../ui/ImageCarousel'
 
 export default function Hero() {
   // Staggered text animation
@@ -37,20 +38,10 @@ export default function Hero() {
 
   return (
     <section className="relative w-full h-screen bg-white overflow-hidden">
-      {/* Background Image with Overlay */}
-      <motion.div
-        className="absolute inset-0"
-        initial={{ scale: 1.1, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.15 }}
-        transition={{ duration: 1.2 }}
-      >
-        <img
-          src={HERO_CONFIG.image_bg}
-          alt="Manufacturing Excellence"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 to-white" />
-      </motion.div>
+      {/* Background Image Carousel */}
+      <div className="absolute inset-0 z-0">
+        <ImageCarousel images={CAROUSEL_IMAGES} duration={5000} />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 container-bipl h-full flex items-center">

@@ -110,7 +110,7 @@ export default function StatisticsCounter() {
 
               {/* Number with Counter Animation */}
               <div className="mb-4">
-                <AnimatedCounter end={parseInt(feature.number)} suffix={feature.number.slice(-1)} />
+                <AnimatedCounter end={parseInt(feature.number)} suffix={feature.suffix} />
               </div>
 
               {/* Label */}

@@ -22,15 +22,6 @@ export default function ProductCategories() {
     },
   }
 
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.8 },
-    },
-  }
-
   return (
     <section className="bg-white py-24 relative overflow-hidden">
       {/* Decorative background */}
@@ -67,13 +58,12 @@ export default function ProductCategories() {
             <motion.div
               key={product.id}
               variants={itemVariants}
-              className="group relative bg-white rounded-xl overflow-hidden border border-cyan-100/40 hover:border-cyan-bright/60 transition-all duration-300"
+              className="group relative bg-white rounded-xl overflow-hidden border border-cyan-100/40 hover:border-cyan-bright/60 transition-all duration-300 cursor-pointer"
               whileHover={{ y: -8, borderColor: '#00D9FF' }}
             >
               {/* Image Container */}
               <motion.div
                 className="relative h-64 overflow-hidden bg-gradient-to-br from-cyan-50 to-blue-50"
-                variants={imageVariants}
               >
                 <motion.img
                   src={product.image}
@@ -81,12 +71,17 @@ export default function ProductCategories() {
                   className="w-full h-full object-cover"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.6 }}
+                  onError={(e) => {
+                    e.target.src = `https://via.placeholder.com/500x400?text=${product.name}`
+                  }}
                 />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 {/* Icon */}
-                <div className="absolute top-4 right-4 text-4xl">{product.icon}</div>
+                <div className="absolute top-4 right-4 text-4xl bg-white/90 rounded-full p-2 shadow-lg">
+                  {product.icon}
+                </div>
               </motion.div>
 
               {/* Content */}

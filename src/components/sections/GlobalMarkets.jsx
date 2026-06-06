@@ -104,36 +104,6 @@ export default function GlobalMarkets() {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Stats Section */}
-        <motion.div
-          variants={itemVariants}
-          className="mt-20 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-2xl border border-cyan-200/50 p-8 lg:p-12"
-        >
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { number: '25+', label: 'Countries', icon: '🌍' },
-              { number: '150+', label: 'Global Brands', icon: '🏢' },
-              { number: '50M+', label: 'Garments/Year', icon: '📦' },
-              { number: '98%', label: 'On-Time Delivery', icon: '✅' },
-            ].map((stat, idx) => (
-              <motion.div
-                key={idx}
-                className="text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
-                <div className="text-4xl mb-2">{stat.icon}</div>
-                <div className="text-3xl lg:text-4xl font-bold text-cyan-bright mb-1">
-                  {stat.number}
-                </div>
-                <div className="text-slate-600 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </motion.div>
     </section>
   )
