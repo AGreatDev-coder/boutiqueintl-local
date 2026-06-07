@@ -1,10 +1,17 @@
 import { motion } from 'framer-motion'
+
+// Day 3 & 4 Sections
 import Hero from '../components/sections/Hero'
 import CompanyOverview from '../components/sections/CompanyOverview'
 import StatisticsCounter from '../components/sections/StatisticsCounter'
 import ProductCategories from '../components/sections/ProductCategories'
 import ManufacturingProcess from '../components/sections/ManufacturingProcess'
 import GlobalMarkets from '../components/sections/GlobalMarkets'
+
+// Day 5 Sections
+import Testimonials from '../components/sections/Testimonials'
+import Certifications from '../components/sections/Certifications'
+import ContactCTA from '../components/sections/ContactCTA'
 
 export default function Home() {
   return (
@@ -23,6 +30,11 @@ export default function Home() {
       <ManufacturingProcess />
       <GlobalMarkets />
 
+      {/* Day 5 Sections */}
+      <Testimonials />
+      <Certifications />
+      <ContactCTA />
+
       {/* Spacer for upcoming sections */}
       <section className="bg-white py-24">
         <div className="container-bipl text-center">
@@ -33,7 +45,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            More Sections Coming Soon
+            More Coming Soon
           </motion.h2>
           <motion.p
             className="text-xl text-slate-600 max-w-2xl mx-auto"
@@ -42,7 +54,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Client Testimonials • Sustainability • Certifications • Contact CTA • And More...
+            FAQ • Blog • Gallery • Partnership Program • And More...
           </motion.p>
         </div>
       </section>
