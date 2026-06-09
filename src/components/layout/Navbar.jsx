@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { NAV_LINKS, COMPANY } from '../../data/siteData'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -20,6 +22,11 @@ export default function Navbar() {
   const itemVariants = {
     closed: { opacity: 0, y: -10 },
     open:   (i) => ({ opacity: 1, y: 0, transition: { delay: i * 0.05 } }),
+  }
+
+  const handleNavClick = (path) => {
+    navigate(path)
+    setIsOpen(false)
   }
 
   return (
@@ -39,9 +46,10 @@ export default function Navbar() {
           
           {/* LEFT: Logo with White Background */}
           <motion.div
-            className="flex items-center"
+            className="flex items-center cursor-pointer"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
+            onClick={() => handleNavClick('/')}
           >
             <div className="bg-black px-4 py-3 rounded-sm">
               <img
@@ -57,8 +65,8 @@ export default function Navbar() {
             {NAV_LINKS.map((link) => (
               <motion.button
                 key={link.path}
-                onClick={() => {}}
-                className="relative font-tenor text-sm tracking-widest text-slate-700 hover:text-cyan-bright transition-colors duration-300 font-semibold cursor-default"
+                onClick={() => handleNavClick(link.path)}
+                className="relative font-tenor text-sm tracking-widest text-slate-700 hover:text-cyan-bright transition-colors duration-300 font-semibold cursor-pointer"
                 whileHover={{ scale: 1.05 }}
               >
                 {link.label}
@@ -76,8 +84,8 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             {/* Get in Touch Button */}
             <motion.button
-              onClick={() => {}}
-              className="hidden sm:inline-block btn-cyan text-xs px-6 py-3 font-semibold cursor-default"
+              onClick={() => handleNavClick('/contact')}
+              className="hidden sm:inline-block btn-cyan text-xs px-6 py-3 font-semibold cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -130,8 +138,8 @@ export default function Navbar() {
                 {NAV_LINKS.map((link, i) => (
                   <motion.div key={link.path} custom={i} variants={itemVariants} initial="closed" animate="open">
                     <button
-                      onClick={() => {}}
-                      className="w-full text-left px-4 py-3 rounded font-tenor text-sm tracking-widest transition-all text-slate-700 hover:text-cyan-bright hover:bg-cyan-50 cursor-default font-semibold"
+                      onClick={() => handleNavClick(link.path)}
+                      className="w-full text-left px-4 py-3 rounded font-tenor text-sm tracking-widest transition-all text-slate-700 hover:text-cyan-bright hover:bg-cyan-50 cursor-pointer font-semibold"
                     >
                       {link.label}
                     </button>
@@ -140,8 +148,8 @@ export default function Navbar() {
                 
                 <motion.div custom={NAV_LINKS.length} variants={itemVariants} initial="closed" animate="open" className="pt-6 border-t border-cyan-200/30">
                   <button
-                    onClick={() => {}}
-                    className="w-full btn-cyan py-3 justify-center cursor-default font-semibold"
+                    onClick={() => handleNavClick('/contact')}
+                    className="w-full btn-cyan py-3 justify-center cursor-pointer font-semibold"
                   >
                     GET IN TOUCH
                   </button>
