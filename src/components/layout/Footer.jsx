@@ -7,7 +7,7 @@ export default function Footer() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+      transition: { staggerChildren: 0.08, delayChildren: 0.2 },
     },
   }
 
@@ -19,7 +19,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gradient-to-b from-blue-50 to-white border-t border-cyan-200/30 relative overflow-hidden">
+    <footer className="bg-white border-t border-cyan-200/30 relative overflow-hidden">
       <motion.div
         className="container-bipl py-16 lg:py-24 relative z-10"
         variants={footerVariants}
@@ -27,52 +27,53 @@ export default function Footer() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           {/* Column 1: Company Info */}
           <motion.div variants={itemVariants}>
             <div className="mb-6">
-              <motion.img
-                src={COMPANY.logo}
-                alt={COMPANY.shortName}
-                className="h-10 w-auto mb-4"
-                whileHover={{ scale: 1.05 }}
-              />
+              <div className="bg-black px-3 py-2 rounded-sm inline-block mb-4">
+                <img
+                  src={COMPANY.logo}
+                  alt={COMPANY.shortName}
+                  className="h-8 w-auto"
+                />
+              </div>
               <p className="text-slate-600 text-sm leading-relaxed max-w-xs">
                 {COMPANY.tagline}. Trusted manufacturer of premium apparel for global brands.
               </p>
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-4">
+            <div className="flex gap-3 mt-6">
               {[
-                { icon: 'in', label: 'LinkedIn',  url: COMPANY.social.linkedin },
-                { icon: 'ig', label: 'Instagram', url: COMPANY.social.instagram },
-                { icon: 'tw', label: 'Twitter',   url: COMPANY.social.twitter },
+                { icon: 'IN', label: 'LinkedIn',  url: COMPANY.social.linkedin },
+                { icon: 'IG', label: 'Instagram', url: COMPANY.social.instagram },
+                { icon: 'TW', label: 'Twitter',   url: COMPANY.social.twitter },
               ].map((social) => (
                 <motion.a
                   key={social.icon}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 flex items-center justify-center border border-cyan-300/60 rounded text-cyan-dark hover:border-cyan-bright hover:text-cyan-bright hover:bg-cyan-50 transition-all duration-300"
+                  className="w-8 h-8 flex items-center justify-center border-2 border-cyan-bright text-cyan-bright rounded hover:bg-cyan-bright hover:text-white transition-all duration-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span className="text-xs font-bold">{social.icon.toUpperCase()}</span>
+                  <span className="text-xs font-bold text-sm">{social.icon}</span>
                 </motion.a>
               ))}
             </div>
           </motion.div>
 
-          {/* Column 2: Quick Links */}
+          {/* Column 2: Navigation Links */}
           <motion.div variants={itemVariants}>
-            <h3 className="section-label mb-6">Navigation</h3>
+            <h3 className="text-cyan-bright font-tenor text-xs tracking-widest font-bold mb-6 uppercase">Navigation</h3>
             <ul className="space-y-3">
               {NAV_LINKS.slice(0, 5).map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-slate-600 text-sm hover:text-cyan-bright transition-colors duration-300 underline-cyan inline-block"
+                    className="text-slate-600 text-sm hover:text-cyan-bright transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
@@ -81,15 +82,15 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Column 3: More Links */}
+          {/* Column 3: Company Links */}
           <motion.div variants={itemVariants}>
-            <h3 className="section-label mb-6">Company</h3>
+            <h3 className="text-cyan-bright font-tenor text-xs tracking-widest font-bold mb-6 uppercase">Company</h3>
             <ul className="space-y-3">
               {NAV_LINKS.slice(5, 10).map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-slate-600 text-sm hover:text-cyan-bright transition-colors duration-300 underline-cyan inline-block"
+                    className="text-slate-600 text-sm hover:text-cyan-bright transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
@@ -100,24 +101,25 @@ export default function Footer() {
 
           {/* Column 4: Certifications & Contact */}
           <motion.div variants={itemVariants}>
-            <h3 className="section-label mb-6">Certifications</h3>
+            <h3 className="text-cyan-bright font-tenor text-xs tracking-widest font-bold mb-6 uppercase">Certifications</h3>
             <ul className="space-y-2 mb-8">
               {CERTIFICATIONS.slice(0, 3).map((cert, i) => (
-                <li key={i} className="text-slate-500 text-xs leading-relaxed">
-                  ✓ {cert}
+                <li key={i} className="text-slate-600 text-sm flex items-start gap-2">
+                  <span className="text-cyan-bright text-xs mt-1">✓</span>
+                  <span>{cert}</span>
                 </li>
               ))}
             </ul>
 
-            <h3 className="section-label mb-3">Contact</h3>
+            <h3 className="text-cyan-bright font-tenor text-xs tracking-widest font-bold mb-4 uppercase">Contact</h3>
             <div className="space-y-2">
-              <p className="text-slate-600 text-sm">
-                <a href={`mailto:${COMPANY.email}`} className="hover:text-cyan-bright transition-colors">
+              <p className="text-slate-600 text-sm hover:text-cyan-bright transition-colors cursor-pointer">
+                <a href={`mailto:${COMPANY.email}`}>
                   {COMPANY.email}
                 </a>
               </p>
-              <p className="text-slate-600 text-sm">
-                <a href={`tel:${COMPANY.phone}`} className="hover:text-cyan-bright transition-colors">
+              <p className="text-slate-600 text-sm hover:text-cyan-bright transition-colors cursor-pointer">
+                <a href={`tel:${COMPANY.phone}`}>
                   {COMPANY.phone}
                 </a>
               </p>
@@ -125,10 +127,8 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* Cyan Divider */}
-        <motion.div className="my-12" variants={itemVariants}>
-          <div className="divider-cyan" />
-        </motion.div>
+        {/* Divider */}
+        <motion.div className="my-12 border-t border-cyan-200/30" variants={itemVariants} />
 
         {/* Bottom Section */}
         <motion.div variants={itemVariants} className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -142,9 +142,6 @@ export default function Footer() {
           </div>
         </motion.div>
       </motion.div>
-
-      {/* Decorative bottom border gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-300/30 to-transparent" />
     </footer>
   )
 }
