@@ -1,2 +1,2 @@
-Boutique-intl
+Boutique-intl=garment export house
 
