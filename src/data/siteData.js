@@ -58,8 +58,10 @@ export const TIMELINE = [
 export const NAV_LINKS = [
   { label: "Home",           path: "/" },
   { label: "About",          path: "/about" },
+  { label: "Products",       path: "/products" },
   { label: "Manufacturing",  path: "/manufacturing" },
   { label: "Capabilities",   path: "/capabilities" },
+  { label: "Quality",        path: "/quality" },
   { label: "Sustainability", path: "/sustainability" },
   { label: "Infrastructure", path: "/infrastructure" },
   { label: "Clients",        path: "/clients" },

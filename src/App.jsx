@@ -8,8 +8,19 @@ import Navbar  from './components/layout/Navbar'
 import Footer  from './components/layout/Footer'
 import Cursor  from './components/ui/Cursor'
 
-// Pages (stub imports — filled in across 40 days)
-import Home   from './pages/Home'
+// Pages
+import Home            from './pages/Home'
+import About           from './pages/About'
+import Manufacturing   from './pages/Manufacturing'
+import Capabilities    from './pages/Capabilities'
+import Products        from './pages/Products'
+import Quality         from './pages/Quality'
+import Sustainability  from './pages/Sustainability'
+import Infrastructure  from './pages/Infrastructure'
+import Clients         from './pages/Clients'
+import Gallery         from './pages/Gallery'
+import Careers         from './pages/Careers'
+import Contact         from './pages/Contact'
 
 // Page transition wrapper
 const pageVariants = {
@@ -37,8 +48,18 @@ function AppRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
-        {/* Additional routes added Day 2+ */}
+        <Route path="/"               element={<PageWrapper><Home /></PageWrapper>} />
+        <Route path="/about"          element={<PageWrapper><About /></PageWrapper>} />
+        <Route path="/manufacturing"  element={<PageWrapper><Manufacturing /></PageWrapper>} />
+        <Route path="/capabilities"   element={<PageWrapper><Capabilities /></PageWrapper>} />
+        <Route path="/products"       element={<PageWrapper><Products /></PageWrapper>} />
+        <Route path="/quality"        element={<PageWrapper><Quality /></PageWrapper>} />
+        <Route path="/sustainability" element={<PageWrapper><Sustainability /></PageWrapper>} />
+        <Route path="/infrastructure" element={<PageWrapper><Infrastructure /></PageWrapper>} />
+        <Route path="/clients"        element={<PageWrapper><Clients /></PageWrapper>} />
+        <Route path="/gallery"        element={<PageWrapper><Gallery /></PageWrapper>} />
+        <Route path="/careers"        element={<PageWrapper><Careers /></PageWrapper>} />
+        <Route path="/contact"        element={<PageWrapper><Contact /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
   )
@@ -50,7 +71,7 @@ export default function App() {
       <ScrollToTop />
       <Cursor />
       <Navbar />
-      <main>
+      <main className="bg-noir min-h-screen">
         <AppRoutes />
       </main>
       <Footer />

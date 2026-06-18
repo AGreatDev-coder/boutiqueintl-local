@@ -1,63 +1,80 @@
-import { motion } from 'framer-motion'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect } from 'react'
+import './index.css'
 
-// Day 3 & 4 Sections
-import Hero from '../components/sections/Hero'
-import CompanyOverview from '../components/sections/CompanyOverview'
-import StatisticsCounter from '../components/sections/StatisticsCounter'
-import ProductCategories from '../components/sections/ProductCategories'
-import ManufacturingProcess from '../components/sections/ManufacturingProcess'
-import GlobalMarkets from '../components/sections/GlobalMarkets'
+// Layout
+import Navbar  from './components/layout/Navbar'
+import Footer  from './components/layout/Footer'
+import Cursor  from './components/ui/Cursor'
 
-// Day 5 Sections
-import Testimonials from '../components/sections/Testimonials'
-import Certifications from '../components/sections/Certifications'
-import ContactCTA from '../components/sections/ContactCTA'
+// Pages
+import Home            from './pages/Home'
+import About           from './pages/About'
+import Manufacturing   from './pages/Manufacturing'
+import Capabilities    from './pages/Capabilities'
+import Products        from './pages/Products'
+import Quality         from './pages/Quality'
+import Sustainability  from './pages/Sustainability'
+import Infrastructure  from './pages/Infrastructure'
+import Clients         from './pages/Clients'
+import Gallery         from './pages/Gallery'
+import Careers         from './pages/Careers'
+import Contact         from './pages/Contact'
 
-export default function Home() {
+// Page transition wrapper
+const pageVariants = {
+  initial: { opacity: 0, y: 16 },
+  enter:   { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } },
+  exit:    { opacity: 0, y: -8, transition: { duration: 0.3 } },
+}
+
+function PageWrapper({ children }) {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      {/* Day 3 Sections */}
-      <Hero />
-      <CompanyOverview />
-      <StatisticsCounter />
-
-      {/* Day 4 Sections */}
-      <ProductCategories />
-      <ManufacturingProcess />
-      <GlobalMarkets />
-
-      {/* Day 5 Sections */}
-      <Testimonials />
-      <Certifications />
-      <ContactCTA />
-
-      {/* Spacer for upcoming sections */}
-      <section className="bg-white py-24">
-        <div className="container-bipl text-center">
-          <motion.h2
-            className="text-5xl font-display font-bold text-slate-900 mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            More Coming Soon
-          </motion.h2>
-          <motion.p
-            className="text-xl text-slate-600 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            FAQ • Blog • Gallery • Partnership Program • And More...
-          </motion.p>
-        </div>
-      </section>
+    <motion.div variants={pageVariants} initial="initial" animate="enter" exit="exit">
+      {children}
     </motion.div>
+  )
+}
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  return null
+}
+
+function AppRoutes() {
+  const location = useLocation()
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/"               element={<PageWrapper><Home /></PageWrapper>} />
+        <Route path="/about"          element={<PageWrapper><About /></PageWrapper>} />
+        <Route path="/manufacturing"  element={<PageWrapper><Manufacturing /></PageWrapper>} />
+        <Route path="/capabilities"   element={<PageWrapper><Capabilities /></PageWrapper>} />
+        <Route path="/products"       element={<PageWrapper><Products /></PageWrapper>} />
+        <Route path="/quality"        element={<PageWrapper><Quality /></PageWrapper>} />
+        <Route path="/sustainability" element={<PageWrapper><Sustainability /></PageWrapper>} />
+        <Route path="/infrastructure" element={<PageWrapper><Infrastructure /></PageWrapper>} />
+        <Route path="/clients"        element={<PageWrapper><Clients /></PageWrapper>} />
+        <Route path="/gallery"        element={<PageWrapper><Gallery /></PageWrapper>} />
+        <Route path="/careers"        element={<PageWrapper><Careers /></PageWrapper>} />
+        <Route path="/contact"        element={<PageWrapper><Contact /></PageWrapper>} />
+      </Routes>
+    </AnimatePresence>
+  )
+}
+
+export default function App() {
+  return (
+    <Router>
+      <ScrollToTop />
+      <Cursor />
+      <Navbar />
+      <main className="bg-noir min-h-screen">
+        <AppRoutes />
+      </main>
+      <Footer />
+    </Router>
   )
 }

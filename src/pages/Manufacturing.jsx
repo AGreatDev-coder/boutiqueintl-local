@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import ManufacturingCapabilities from '../components/sections/ManufacturingCapabilities'
 import Equipment from '../components/sections/Equipment'
 import ProductionProcess from '../components/sections/ProductionProcess'
-import QualityStandards from '../components/sections/QualityStandards'
 import { MANUFACTURING_INTRO } from '../data/manufacturingData'
 
 export default function Manufacturing() {
@@ -62,9 +61,6 @@ export default function Manufacturing() {
 
       {/* Production Process */}
       <ProductionProcess />
-
-      {/* Quality Standards */}
-      <QualityStandards />
 
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-cyan-bright via-cyan-dark to-cyan-bright py-24 relative overflow-hidden">
