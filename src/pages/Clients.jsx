@@ -1,27 +1,28 @@
 import { motion } from 'framer-motion'
+import ClientsShowcase from '../components/sections/ClientsShowcase'
 
 export default function Clients() {
   return (
-    <motion.div
-      className="min-h-screen pt-32 pb-16 bg-white"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      <div className="container-bipl">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+      <section className="bg-gradient-to-b from-cyan-50 via-white to-white py-24 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-100/20 rounded-full blur-3xl -z-10" />
+        <div className="absolute top-20 left-0 w-80 h-80 bg-blue-100/15 rounded-full blur-3xl -z-10" />
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          className="container-bipl text-center"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
         >
-          <h1 className="text-6xl font-display font-bold text-slate-900 mb-4">
-            <span className="text-cyan-gradient">Clients</span>
+          <span className="section-label">Our Clients</span>
+          <h1 className="text-6xl lg:text-7xl font-display font-bold mt-6 mb-6 text-slate-900">
+            Trusted by <span className="text-cyan-gradient">500+ Brands</span>
           </h1>
-          <p className="text-slate-600 text-lg">
-            Clients page content coming soon. Full design, animations, and interactive elements will be implemented incrementally.
+          <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
+            Global fashion houses, premium retailers and emerging labels — all backed by our manufacturing excellence
           </p>
         </motion.div>
-      </div>
+      </section>
+      <ClientsShowcase />
     </motion.div>
   )
 }
