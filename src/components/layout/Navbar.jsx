@@ -15,7 +15,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Close menu when route changes
   useEffect(() => {
     setIsOpen(false)
   }, [location.pathname])
@@ -30,8 +29,7 @@ export default function Navbar() {
     open:   (i) => ({ opacity: 1, y: 0, transition: { delay: i * 0.05 } }),
   }
 
-  const handleNavClick = (path) => {
-    console.log('Navigating to:', path) // Debug log
+  const go = (path) => {
     navigate(path)
     setIsOpen(false)
   }
@@ -40,11 +38,10 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Main Navbar */}
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          scrolled 
-            ? 'bg-white/95 backdrop-blur-xl border-b border-cyan-200/30 shadow-md' 
+          scrolled
+            ? 'bg-white/95 backdrop-blur-xl border-b border-cyan-200/30 shadow-md'
             : 'bg-white backdrop-blur-xl border-b border-cyan-100/20'
         }`}
         initial={{ y: -100 }}
@@ -52,35 +49,26 @@ export default function Navbar() {
         transition={{ duration: 0.6 }}
       >
         <div className="h-20 px-6 lg:px-12 flex items-center justify-between">
-          
-          {/* LEFT: Logo */}
           <motion.button
-            onClick={() => handleNavClick('/')}
+            onClick={() => go('/')}
             className="flex items-center cursor-pointer"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
             type="button"
           >
             <div className="bg-black px-4 py-3 rounded-sm">
-              <img
-                src={COMPANY.logo}
-                alt="Boutique International"
-                className="h-10 w-auto"
-              />
+              <img src={COMPANY.logo} alt="Boutique International" className="h-10 w-auto" />
             </div>
           </motion.button>
 
-          {/* CENTER: Navigation Menu (Desktop Only) */}
           <div className="hidden lg:flex items-center gap-8">
             {NAV_LINKS.map((link) => (
               <motion.button
                 key={link.path}
-                onClick={() => handleNavClick(link.path)}
+                onClick={() => go(link.path)}
                 type="button"
                 className={`relative font-tenor text-sm tracking-widest transition-colors duration-300 font-semibold cursor-pointer ${
-                  isActive(link.path)
-                    ? 'text-cyan-bright'
-                    : 'text-slate-700 hover:text-cyan-bright'
+                  isActive(link.path) ? 'text-cyan-bright' : 'text-slate-700 hover:text-cyan-bright'
                 }`}
                 whileHover={{ scale: 1.05 }}
               >
@@ -95,11 +83,9 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* RIGHT: CTA Button (Desktop) + Mobile Menu */}
           <div className="flex items-center gap-4">
-            {/* Get in Touch Button */}
             <motion.button
-              onClick={() => handleNavClick('/contact')}
+              onClick={() => go('/contact')}
               type="button"
               className="hidden sm:inline-block btn-cyan text-xs px-6 py-3 font-semibold cursor-pointer"
               whileHover={{ scale: 1.05 }}
@@ -108,7 +94,6 @@ export default function Navbar() {
               GET IN TOUCH
             </motion.button>
 
-            {/* Mobile Hamburger Menu */}
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
@@ -130,11 +115,9 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile Drawer Menu */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               className="fixed inset-0 bg-black/20 backdrop-blur-sm z-30 lg:hidden"
               initial={{ opacity: 0 }}
@@ -142,8 +125,6 @@ export default function Navbar() {
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
             />
-
-            {/* Drawer */}
             <motion.div
               className="fixed left-0 top-0 bottom-0 w-full max-w-sm bg-white border-r border-cyan-200/30 z-40 lg:hidden overflow-y-auto"
               variants={menuVariants}
@@ -155,7 +136,7 @@ export default function Navbar() {
                 {NAV_LINKS.map((link, i) => (
                   <motion.div key={link.path} custom={i} variants={itemVariants} initial="closed" animate="open">
                     <button
-                      onClick={() => handleNavClick(link.path)}
+                      onClick={() => go(link.path)}
                       type="button"
                       className={`w-full text-left px-4 py-3 rounded font-tenor text-sm tracking-widest transition-all cursor-pointer font-semibold ${
                         isActive(link.path)
@@ -167,10 +148,15 @@ export default function Navbar() {
                     </button>
                   </motion.div>
                 ))}
-                
-                <motion.div custom={NAV_LINKS.length} variants={itemVariants} initial="closed" animate="open" className="pt-6 border-t border-cyan-200/30">
+                <motion.div
+                  custom={NAV_LINKS.length}
+                  variants={itemVariants}
+                  initial="closed"
+                  animate="open"
+                  className="pt-6 border-t border-cyan-200/30"
+                >
                   <button
-                    onClick={() => handleNavClick('/contact')}
+                    onClick={() => go('/contact')}
                     type="button"
                     className="w-full btn-cyan py-3 justify-center cursor-pointer font-semibold"
                   >
@@ -183,7 +169,6 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* Navbar Spacer */}
       <div className="h-20" />
     </>
   )
