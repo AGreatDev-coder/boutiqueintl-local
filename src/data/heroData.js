@@ -13,10 +13,10 @@ export const CAROUSEL_IMAGES = [
   "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80",
   "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80",
   "https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=1600&q=80",
-  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80",
-  "https://images.unsplash.com/photo-1551028719-00167b16ebc5?w=1600&q=80",
-  "https://images.unsplash.com/photo-1489749798305-4fea3ba63d60?w=1600&q=80",
-  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80",
+  "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=1600&q=80",
+  "https://images.unsplash.com/photo-1565514020179-026b92b2d70b?w=1600&q=80",
+  "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&q=80",
+  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&q=80",
 ];
 
 export const OVERVIEW_CONFIG = {

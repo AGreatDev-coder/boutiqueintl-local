@@ -32,8 +32,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           <motion.div variants={fadeUp}>
             <div className="mb-6">
-              <div className="bg-black px-3 py-2 rounded-sm inline-block mb-4">
-                <img src={COMPANY.logo} alt={COMPANY.shortName} className="h-8 w-auto" />
+              <div className="mb-4">
+                <img src={COMPANY.logo} alt={COMPANY.shortName} className="h-10 w-auto" />
               </div>
               <p className="text-slate-600 text-sm leading-relaxed max-w-xs">
                 {COMPANY.tagline}. Trusted manufacturer of premium apparel for global brands.

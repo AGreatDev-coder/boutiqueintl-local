@@ -51,23 +51,23 @@ export default function Navbar() {
         <div className="h-20 px-6 lg:px-12 flex items-center justify-between">
           <motion.button
             onClick={() => go('/')}
-            className="flex items-center cursor-pointer"
+            className="flex items-center cursor-pointer flex-shrink-0"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
             type="button"
           >
-            <div className="bg-black px-4 py-3 rounded-sm">
+            <div className="bg-cyan-50/60 rounded-lg px-3 py-2 border border-cyan-100/50">
               <img src={COMPANY.logo} alt="Boutique International" className="h-10 w-auto" />
             </div>
           </motion.button>
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-6">
             {NAV_LINKS.map((link) => (
               <motion.button
                 key={link.path}
                 onClick={() => go(link.path)}
                 type="button"
-                className={`relative font-tenor text-sm tracking-widest transition-colors duration-300 font-semibold cursor-pointer ${
+                className={`relative font-tenor text-[13px] tracking-wide transition-colors duration-300 font-semibold cursor-pointer whitespace-nowrap ${
                   isActive(link.path) ? 'text-cyan-bright' : 'text-slate-700 hover:text-cyan-bright'
                 }`}
                 whileHover={{ scale: 1.05 }}
