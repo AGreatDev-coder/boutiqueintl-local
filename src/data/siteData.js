@@ -56,18 +56,12 @@ export const TIMELINE = [
 ];
 
 export const NAV_LINKS = [
-  { label: "Home",           path: "/" },
-  { label: "About",          path: "/about" },
-  { label: "Products",       path: "/products" },
-  { label: "Manufacturing",  path: "/manufacturing" },
-  { label: "Capabilities",   path: "/capabilities" },
-  { label: "Quality",        path: "/quality" },
-  { label: "Sustainability", path: "/sustainability" },
-  { label: "Infrastructure", path: "/infrastructure" },
-  { label: "Clients",        path: "/clients" },
-  { label: "Gallery",        path: "/gallery" },
-  { label: "Careers",        path: "/careers" },
-  { label: "Contact",        path: "/contact" },
+  { label: "Home",                     path: "/" },
+  { label: "Products & Manufacturing", path: "/products-manufacturing" },
+  { label: "Quality & Sustainability", path: "/quality-sustainability" },
+  { label: "CSR",                      path: "/csr" },
+  { label: "Gallery",                  path: "/gallery" },
+  { label: "Get In Touch",             path: "/contact" },
 ];
 
 export const CERTIFICATIONS = [
