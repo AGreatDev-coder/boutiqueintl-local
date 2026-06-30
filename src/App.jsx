@@ -9,18 +9,13 @@ import Footer  from './components/layout/Footer'
 import Cursor  from './components/ui/Cursor'
 
 // Pages
-import Home            from './pages/Home'
-import About           from './pages/About'
-import Manufacturing   from './pages/Manufacturing'
-import Capabilities    from './pages/Capabilities'
-import Products        from './pages/Products'
-import Quality         from './pages/Quality'
-import Sustainability  from './pages/Sustainability'
-import Infrastructure  from './pages/Infrastructure'
-import Clients         from './pages/Clients'
-import Gallery         from './pages/Gallery'
-import Careers         from './pages/Careers'
-import Contact         from './pages/Contact'
+import Home                  from './pages/Home'
+import ProductsManufacturing from './pages/ProductsManufacturing'
+import QualitySustainability from './pages/QualitySustainability'
+import CSR                   from './pages/CSR'
+import Gallery                from './pages/Gallery'
+import Careers                from './pages/Careers'
+import Contact                from './pages/Contact'
 
 // Page transition wrapper
 const pageVariants = {
@@ -48,18 +43,13 @@ function AppRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/"               element={<PageWrapper><Home /></PageWrapper>} />
-        <Route path="/about"          element={<PageWrapper><About /></PageWrapper>} />
-        <Route path="/manufacturing"  element={<PageWrapper><Manufacturing /></PageWrapper>} />
-        <Route path="/capabilities"   element={<PageWrapper><Capabilities /></PageWrapper>} />
-        <Route path="/products"       element={<PageWrapper><Products /></PageWrapper>} />
-        <Route path="/quality"        element={<PageWrapper><Quality /></PageWrapper>} />
-        <Route path="/sustainability" element={<PageWrapper><Sustainability /></PageWrapper>} />
-        <Route path="/infrastructure" element={<PageWrapper><Infrastructure /></PageWrapper>} />
-        <Route path="/clients"        element={<PageWrapper><Clients /></PageWrapper>} />
-        <Route path="/gallery"        element={<PageWrapper><Gallery /></PageWrapper>} />
-        <Route path="/careers"        element={<PageWrapper><Careers /></PageWrapper>} />
-        <Route path="/contact"        element={<PageWrapper><Contact /></PageWrapper>} />
+        <Route path="/"                       element={<PageWrapper><Home /></PageWrapper>} />
+        <Route path="/products-manufacturing" element={<PageWrapper><ProductsManufacturing /></PageWrapper>} />
+        <Route path="/quality-sustainability" element={<PageWrapper><QualitySustainability /></PageWrapper>} />
+        <Route path="/csr"                    element={<PageWrapper><CSR /></PageWrapper>} />
+        <Route path="/gallery"                element={<PageWrapper><Gallery /></PageWrapper>} />
+        <Route path="/careers"                element={<PageWrapper><Careers /></PageWrapper>} />
+        <Route path="/contact"                element={<PageWrapper><Contact /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
   )

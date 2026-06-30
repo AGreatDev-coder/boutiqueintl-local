@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import QualityStandards from '../components/sections/QualityStandards'
 import Certifications from '../components/sections/Certifications'
 import ContactCTA from '../components/sections/ContactCTA'
 
@@ -9,7 +10,7 @@ const PILLARS = [
   { icon: '🌍', stat: '2030', label: 'Carbon Neutral Goal', desc: 'On track for net-zero carbon operations by 2030' },
 ]
 
-export default function Sustainability() {
+export default function QualitySustainability() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
 
@@ -24,17 +25,20 @@ export default function Sustainability() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-label">Our Responsibility</span>
+          <span className="section-label">Our Standards &amp; Responsibility</span>
           <h1 className="text-6xl lg:text-7xl font-display font-bold mt-6 mb-6 text-slate-900">
-            Building a <span className="text-cyan-gradient">Sustainable</span> Future
+            Quality &amp; <span className="text-cyan-gradient">Sustainability</span>
           </h1>
           <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
-            Every garment we craft reflects our commitment to the environment, our workers, and the communities we serve.
+            Certified across all major international standards for quality, safety, and ethical, sustainable manufacturing
           </p>
         </motion.div>
       </section>
 
-      {/* Key Pillars */}
+      {/* Quality Standards */}
+      <QualityStandards />
+
+      {/* Sustainability Pillars */}
       <section className="bg-white py-20">
         <motion.div
           className="container-bipl"
@@ -64,7 +68,7 @@ export default function Sustainability() {
         </motion.div>
       </section>
 
-      {/* Certifications & Sustainability Highlights */}
+      {/* Certifications */}
       <Certifications />
 
       {/* CTA */}
