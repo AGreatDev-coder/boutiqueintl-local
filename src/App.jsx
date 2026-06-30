@@ -13,6 +13,7 @@ import Home                  from './pages/Home'
 import ProductsManufacturing from './pages/ProductsManufacturing'
 import QualitySustainability from './pages/QualitySustainability'
 import CSR                   from './pages/CSR'
+import CSRInitiativePage      from './pages/CSRInitiativePage'
 import Gallery                from './pages/Gallery'
 import Careers                from './pages/Careers'
 import Contact                from './pages/Contact'
@@ -47,6 +48,7 @@ function AppRoutes() {
         <Route path="/products-manufacturing" element={<PageWrapper><ProductsManufacturing /></PageWrapper>} />
         <Route path="/quality-sustainability" element={<PageWrapper><QualitySustainability /></PageWrapper>} />
         <Route path="/csr"                    element={<PageWrapper><CSR /></PageWrapper>} />
+        <Route path="/csr/:slug"              element={<PageWrapper><CSRInitiativePage /></PageWrapper>} />
         <Route path="/gallery"                element={<PageWrapper><Gallery /></PageWrapper>} />
         <Route path="/careers"                element={<PageWrapper><Careers /></PageWrapper>} />
         <Route path="/contact"                element={<PageWrapper><Contact /></PageWrapper>} />

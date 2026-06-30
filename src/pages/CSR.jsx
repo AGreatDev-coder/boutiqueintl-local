@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import CoreValues from '../components/sections/CoreValues'
 import ContactCTA from '../components/sections/ContactCTA'
 
 const INITIATIVES = [
   {
+    slug: 'environmental',
     icon: '🌿',
     label: 'Environmental',
     title: 'Environmental Initiatives',
@@ -12,14 +14,16 @@ const INITIATIVES = [
     highlights: ['Zero liquid discharge systems', 'Rainwater harvesting', 'Effluent treatment plants'],
   },
   {
+    slug: 'herhealth',
     icon: '❤️',
-    label: 'Women Health',
+    label: "Women's Health",
     title: 'HERhealth Project',
     subtitle: 'Empowering Women Through Health & Awareness',
     desc: 'In partnership with global health organisations, our HERhealth initiative delivers structured health education, preventive care, and wellness support directly to our female workforce — promoting dignity, confidence, and wellbeing at every level.',
     highlights: ['Health workshops & screenings', 'Mental wellness support', 'Maternal care programs'],
   },
   {
+    slug: 'health-initiatives',
     icon: '🏥',
     label: 'Healthcare',
     title: 'Health-Related Initiatives',
@@ -28,6 +32,7 @@ const INITIATIVES = [
     highlights: ['Free medical camps', 'First-aid & safety training', 'Community outreach programs'],
   },
   {
+    slug: 'ngo-donations',
     icon: '🤲',
     label: 'Philanthropy',
     title: 'Donations to NGOs',
@@ -47,6 +52,7 @@ const stagger = {
 }
 
 export default function CSR() {
+  const navigate = useNavigate()
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
 
@@ -111,8 +117,9 @@ export default function CSR() {
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className="group relative bg-white rounded-xl p-8 border border-cyan-100/40 hover:border-cyan-bright/60 transition-all duration-300"
+                className="group relative bg-white rounded-xl p-8 border border-cyan-100/40 hover:border-cyan-bright/60 transition-all duration-300 cursor-pointer"
                 whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(0,217,255,0.10)' }}
+                onClick={() => navigate(`/csr/${item.slug}`)}
               >
                 <div className="flex items-start gap-5 mb-5">
                   <div className="text-5xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
@@ -123,7 +130,7 @@ export default function CSR() {
                   </div>
                 </div>
                 <p className="text-slate-600 leading-relaxed mb-5">{item.desc}</p>
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-6">
                   {item.highlights.map((h, j) => (
                     <li key={j} className="flex items-center gap-2 text-sm text-slate-600">
                       <span className="w-1.5 h-1.5 rounded-full bg-cyan-bright flex-shrink-0" />
@@ -131,6 +138,9 @@ export default function CSR() {
                     </li>
                   ))}
                 </ul>
+                <span className="text-xs font-semibold text-cyan-bright uppercase tracking-widest group-hover:gap-2 flex items-center gap-1 transition-all">
+                  Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </span>
                 <motion.div
                   className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-cyan-bright to-cyan-dark rounded-b-xl"
                   initial={{ width: 0 }}
