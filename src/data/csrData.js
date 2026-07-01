@@ -6,6 +6,12 @@ export const CSR_INITIATIVES = [
     title: 'Environmental Initiatives',
     subtitle: 'Reducing Pollution & Conserving Groundwater',
     heroDesc: 'Our environmental responsibility programme tackles pollution at its source and protects the groundwater resources that communities depend on — through technology, renewable energy, and smarter manufacturing.',
+    heroImage: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1400&q=80',
+    galleryImages: [
+      { src: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80', alt: 'Solar panels generating renewable energy' },
+      { src: 'https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=800&q=80', alt: 'Wind turbines and clean energy infrastructure' },
+      { src: 'https://images.unsplash.com/photo-1444464666168-49d60a4c23dd?auto=format&fit=crop&w=800&q=80', alt: 'Water conservation and clean river resources' },
+    ],
     overview: 'At Boutique International, environmental stewardship is embedded into our operations rather than bolted on as an afterthought. We have systematically replaced high-emission processes with cleaner alternatives, invested in water recycling infrastructure, and shifted a significant portion of our energy needs to renewable sources.',
     objectives: [
       'Reduce industrial air and water pollution across all manufacturing facilities',
@@ -50,6 +56,12 @@ export const CSR_INITIATIVES = [
     title: 'HERhealth Project',
     subtitle: 'Empowering Women Through Health & Awareness',
     heroDesc: 'Launched in partnership with global health organisations, the HERhealth Project brings structured health education, preventive care, and wellness programmes directly to our female workforce and their families.',
+    heroImage: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1400&q=80',
+    galleryImages: [
+      { src: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80', alt: 'Women professionals collaborating in a workshop' },
+      { src: 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=800&q=80', alt: 'Women empowerment and health education session' },
+      { src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80', alt: 'Healthcare professional providing support' },
+    ],
     overview: 'The HERhealth initiative reflects our belief that a healthy workforce is the foundation of a thriving business and community. Through a comprehensive year-long programme, we equip women workers with knowledge, resources, and confidence to take control of their own health and that of their families.',
     objectives: [
       'Raise health literacy among female workers across all departments and production floors',
@@ -66,7 +78,7 @@ export const CSR_INITIATIVES = [
       {
         icon: '🤱',
         title: 'Maternal & Child Health',
-        desc: 'Dedicated modules on child and maternal health, family planning, and safe pregnancy practices — helping women make informed decisions about their own and their children\'s wellbeing.',
+        desc: "Dedicated modules on child and maternal health, family planning, and safe pregnancy practices — helping women make informed decisions about their own and their children's wellbeing.",
       },
       {
         icon: '🧠',
@@ -94,6 +106,12 @@ export const CSR_INITIATIVES = [
     title: 'Health-Related Initiatives',
     subtitle: 'Caring for Our People and Communities',
     heroDesc: 'Recognising that worker health is a shared responsibility, Boutique International runs ongoing preventive health programmes — free for all employees and open to the surrounding community.',
+    heroImage: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1400&q=80',
+    galleryImages: [
+      { src: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80', alt: 'Blood pressure monitoring health checkup' },
+      { src: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=800&q=80', alt: 'Doctor providing medical consultation' },
+      { src: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80', alt: 'Community health camp and outreach programme' },
+    ],
     overview: 'Our health initiatives go beyond the statutory minimum. We bring qualified medical professionals on-site, run proactive screening programmes, and make preventive care accessible to workers who might otherwise go without. The result is a healthier, more secure workforce and a stronger bond with the communities around us.',
     objectives: [
       'Provide regular, accessible preventive health screenings to all factory employees',
@@ -138,6 +156,12 @@ export const CSR_INITIATIVES = [
     title: 'Donations to NGOs',
     subtitle: 'Supporting Grassroots Change',
     heroDesc: 'Boutique International channels a dedicated share of annual profits toward vetted non-governmental organisations working to uplift underserved communities across education, child safety, and career development.',
+    heroImage: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1400&q=80',
+    galleryImages: [
+      { src: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80', alt: 'Children in classroom receiving education' },
+      { src: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=800&q=80', alt: 'Community volunteers and NGO workers' },
+      { src: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80', alt: 'Workshop and skill development session' },
+    ],
     overview: 'We believe that corporate success carries an obligation to reinvest in the communities that make it possible. Our NGO partnership programme supports organisations whose work creates lasting structural change — not just short-term relief. We actively seek partners with proven track records, transparent reporting, and scalable models.',
     objectives: [
       'Direct meaningful financial support to organisations working at the grassroots level',
@@ -169,7 +193,7 @@ export const CSR_INITIATIVES = [
     ],
     impact: [
       { stat: '10+', label: 'NGO Partners', desc: 'Vetted organisations receiving active support' },
-      { stat: '10M', label: 'Children Targeted', desc: 'PCF\'s 2030 reach goal we are helping fund' },
+      { stat: '10M', label: 'Children Targeted', desc: "PCF's 2030 reach goal we are helping fund" },
       { stat: '2', label: 'Focus NGOs', desc: 'Core partners: PCF and Each One Teach One' },
       { stat: '100%', label: 'Transparent', desc: 'All donations tracked and impact reported' },
     ],

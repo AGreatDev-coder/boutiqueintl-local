@@ -31,7 +31,7 @@ export default function CSRInitiativePage() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
 
-      {/* Hero */}
+      {/* Hero — two-column: text left, image right */}
       <section className="bg-gradient-to-b from-cyan-50 via-white to-white py-24 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-100/20 rounded-full blur-3xl -z-10" />
         <div className="absolute top-20 left-0 w-80 h-80 bg-blue-100/15 rounded-full blur-3xl -z-10" />
@@ -51,14 +51,32 @@ export default function CSRInitiativePage() {
             Back to CSR
           </motion.button>
 
-          <div className="max-w-4xl">
-            <span className="section-label">{d.label}</span>
-            <h1 className="text-5xl lg:text-7xl font-display font-bold mt-6 mb-4 text-slate-900">
-              {d.title.split(' ').slice(0, -1).join(' ')}{' '}
-              <span className="text-cyan-gradient">{d.title.split(' ').slice(-1)}</span>
-            </h1>
-            <p className="text-xl text-slate-500 font-medium mb-6">{d.subtitle}</p>
-            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">{d.heroDesc}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Text */}
+            <div>
+              <span className="section-label">{d.label}</span>
+              <h1 className="text-5xl lg:text-6xl font-display font-bold mt-6 mb-4 text-slate-900">
+                {d.title.split(' ').slice(0, -1).join(' ')}{' '}
+                <span className="text-cyan-gradient">{d.title.split(' ').slice(-1)}</span>
+              </h1>
+              <p className="text-xl text-slate-500 font-medium mb-6">{d.subtitle}</p>
+              <p className="text-lg text-slate-600 leading-relaxed">{d.heroDesc}</p>
+            </div>
+
+            {/* Hero image */}
+            <motion.div
+              className="rounded-2xl overflow-hidden shadow-xl h-80 lg:h-96"
+              initial={{ opacity: 0, x: 24 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              <img
+                src={d.heroImage}
+                alt={d.title}
+                loading="lazy"
+                className="w-full h-full object-cover object-center"
+              />
+            </motion.div>
           </div>
         </motion.div>
       </section>
@@ -141,8 +159,48 @@ export default function CSRInitiativePage() {
         </motion.div>
       </section>
 
+      {/* Gallery */}
+      {d.galleryImages?.length > 0 && (
+        <section className="bg-white py-16">
+          <motion.div
+            className="container-bipl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="text-center mb-10">
+              <span className="section-label">In Action</span>
+              <h2 className="text-4xl font-display font-bold mt-4 text-slate-900">
+                Initiative <span className="text-cyan-gradient">Gallery</span>
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {d.galleryImages.map((img, i) => (
+                <motion.div
+                  key={i}
+                  className="rounded-xl overflow-hidden h-56 shadow-md"
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  whileHover={{ scale: 1.02, boxShadow: '0 16px 32px rgba(0,217,255,0.12)' }}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </section>
+      )}
+
       {/* Impact Highlights */}
-      <section className="bg-white py-20">
+      <section className="bg-gradient-to-b from-white via-blue-50 to-white py-20">
         <motion.div
           className="container-bipl"
           initial={{ opacity: 0, y: 24 }}
@@ -177,7 +235,7 @@ export default function CSRInitiativePage() {
       </section>
 
       {/* Conclusion */}
-      <section className="bg-gradient-to-b from-white via-blue-50 to-white py-16">
+      <section className="bg-white py-16">
         <motion.div
           className="container-bipl max-w-4xl mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}
