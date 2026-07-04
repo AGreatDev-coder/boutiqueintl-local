@@ -53,7 +53,7 @@ export default function ManufacturingProcess() {
                 }}
                 className="group relative"
               >
-                <div className="bg-white rounded-xl p-6 h-full border-2 border-cyan-100 hover:border-cyan-bright transition-all duration-300 group-hover:shadow-lg group-hover:shadow-cyan-100/50">
+                <div className="bg-white rounded-xl overflow-hidden h-full border-2 border-cyan-100 hover:border-cyan-bright transition-all duration-300 group-hover:shadow-lg group-hover:shadow-cyan-100/50">
                   <motion.div
                     className="absolute -top-5 -left-5 w-12 h-12 bg-gradient-to-br from-cyan-bright to-cyan-dark rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg"
                     whileHover={{ scale: 1.1, rotate: 10 }}
@@ -61,21 +61,36 @@ export default function ManufacturingProcess() {
                     {step.step}
                   </motion.div>
 
-                  <div className="text-4xl mb-4 mt-2">{step.icon}</div>
+                  <div className="h-28 overflow-hidden bg-cyan-50">
+                    <motion.img
+                      src={step.image}
+                      alt={step.title}
+                      className="h-full w-full object-cover"
+                      whileHover={{ scale: 1.08 }}
+                      transition={{ duration: 0.6 }}
+                      onError={(e) => {
+                        e.target.src = `https://via.placeholder.com/600x300?text=${step.title}`
+                      }}
+                    />
+                  </div>
 
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-cyan-bright transition-colors">
-                    {step.title}
-                  </h3>
+                  <div className="p-6">
+                    <div className="text-sm font-bold tracking-widest text-cyan-bright mb-3">{step.icon}</div>
 
-                  <p className="text-sm text-slate-600 mb-4 leading-relaxed">{step.description}</p>
+                    <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-cyan-bright transition-colors">
+                      {step.title}
+                    </h3>
 
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    whileHover={{ opacity: 1, height: 'auto' }}
-                    className="overflow-hidden"
-                  >
-                    <p className="text-xs text-slate-500 pt-2 border-t border-cyan-100/50">{step.details}</p>
-                  </motion.div>
+                    <p className="text-sm text-slate-600 mb-4 leading-relaxed">{step.description}</p>
+
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      whileHover={{ opacity: 1, height: 'auto' }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-xs text-slate-500 pt-2 border-t border-cyan-100/50">{step.details}</p>
+                    </motion.div>
+                  </div>
 
                   <motion.div
                     className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-cyan-bright to-cyan-dark rounded-b-xl"

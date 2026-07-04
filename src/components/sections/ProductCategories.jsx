@@ -1,7 +1,10 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { PRODUCT_CATEGORIES } from '../../data/productsData'
 
 export default function ProductCategories() {
+  const [selectedProduct, setSelectedProduct] = useState(null)
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -48,7 +51,7 @@ export default function ProductCategories() {
 
         {/* Products Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -58,7 +61,7 @@ export default function ProductCategories() {
             <motion.div
               key={product.id}
               variants={itemVariants}
-              className="group relative bg-white rounded-xl overflow-hidden border border-cyan-100/40 hover:border-cyan-bright/60 transition-all duration-300 cursor-pointer"
+              className="group relative bg-white rounded-xl overflow-hidden border border-cyan-100/40 hover:border-cyan-bright/60 transition-all duration-300"
               whileHover={{ y: -8, borderColor: '#00D9FF' }}
             >
               {/* Image Container */}
@@ -124,8 +127,9 @@ export default function ProductCategories() {
                 whileHover={{ opacity: 1 }}
               >
                 <motion.button
-                  onClick={() => {}}
-                  className="px-6 py-2 bg-cyan-bright text-slate-900 font-semibold rounded-lg opacity-0 group-hover:opacity-100 transform group-hover:scale-100 scale-95 transition-all duration-300 cursor-default"
+                  type="button"
+                  onClick={() => setSelectedProduct(product)}
+                  className="px-6 py-2 bg-cyan-bright text-slate-900 font-semibold rounded-lg opacity-0 group-hover:opacity-100 transform group-hover:scale-100 scale-95 transition-all duration-300 cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                 >
                   Explore
@@ -135,6 +139,86 @@ export default function ProductCategories() {
           ))}
         </motion.div>
       </motion.div>
+
+      <AnimatePresence>
+        {selectedProduct && (
+          <motion.div
+            className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm px-4 py-6 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedProduct(null)}
+          >
+            <motion.div
+              className="bg-white w-full max-w-6xl max-h-[90vh] overflow-y-auto rounded-xl shadow-2xl"
+              initial={{ opacity: 0, y: 24, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 16, scale: 0.98 }}
+              transition={{ duration: 0.25 }}
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="sticky top-0 z-10 bg-white/95 backdrop-blur border-b border-cyan-100 px-6 py-5 flex items-start justify-between gap-4">
+                <div>
+                  <span className="section-label">Apparel & Fabric Library</span>
+                  <h3 className="text-3xl font-display font-bold text-slate-900 mt-2">
+                    {selectedProduct.name}
+                  </h3>
+                  <p className="text-sm text-slate-600 mt-2 max-w-2xl">
+                    Relevant apparel styles with fabric references, composition, and GSM or gauge details.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setSelectedProduct(null)}
+                  className="shrink-0 w-10 h-10 rounded-full border border-slate-200 text-slate-700 hover:bg-slate-100 transition-colors"
+                  aria-label="Close apparel gallery"
+                >
+                  x
+                </button>
+              </div>
+
+              <div className="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                {selectedProduct.apparels.map((apparel) => (
+                  <article
+                    key={apparel.code}
+                    className="rounded-lg border border-cyan-100 overflow-hidden bg-white shadow-sm"
+                  >
+                    <div className="h-52 bg-cyan-50 overflow-hidden">
+                      <img
+                        src={apparel.image}
+                        alt={`${selectedProduct.name} ${apparel.type}`}
+                        className="w-full h-full object-cover"
+                        onError={(event) => {
+                          event.currentTarget.src = selectedProduct.image
+                        }}
+                      />
+                    </div>
+                    <div className="p-5">
+                      <div className="text-xs font-bold uppercase tracking-wider text-cyan-dark mb-2">
+                        {apparel.code}
+                      </div>
+                      <h4 className="text-lg font-semibold text-slate-900 mb-3">
+                        {apparel.type}
+                      </h4>
+                      <div className="space-y-2 text-sm text-slate-600">
+                        <p>
+                          <span className="font-semibold text-slate-800">Fabric:</span> {apparel.fabric}
+                        </p>
+                        <p>
+                          <span className="font-semibold text-slate-800">Composition:</span> {apparel.composition}
+                        </p>
+                        <p>
+                          <span className="font-semibold text-slate-800">Spec:</span> {apparel.metric}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }
