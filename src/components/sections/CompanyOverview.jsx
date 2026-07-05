@@ -86,15 +86,6 @@ export default function CompanyOverview() {
               ))}
             </motion.div>
 
-            <motion.div variants={itemVariants}>
-              <motion.button
-                className="btn-cyan px-8 py-4 text-base font-semibold cursor-default"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Learn More About Us
-              </motion.button>
-            </motion.div>
           </motion.div>
         </motion.div>
       </div>

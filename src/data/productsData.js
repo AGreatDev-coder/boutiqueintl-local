@@ -1,4 +1,4 @@
-// Product Categories and Manufacturing Process Data
+
 
 export const PRODUCT_CATEGORIES = [
   {

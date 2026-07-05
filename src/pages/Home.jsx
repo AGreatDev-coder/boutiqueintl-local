@@ -9,7 +9,6 @@ import ManufacturingProcess from '../components/sections/ManufacturingProcess'
 import GlobalMarkets from '../components/sections/GlobalMarkets'
 
 // Day 5 Sections
-import Testimonials from '../components/sections/Testimonials'
 import Certifications from '../components/sections/Certifications'
 import ContactCTA from '../components/sections/ContactCTA'
 
@@ -31,7 +30,6 @@ export default function Home() {
       <GlobalMarkets />
 
       {/* Day 5 Sections */}
-      <Testimonials />
       <Certifications />
       <ContactCTA />
 
