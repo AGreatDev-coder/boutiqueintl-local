@@ -69,7 +69,8 @@ export default function ManufacturingProcess() {
                       whileHover={{ scale: 1.08 }}
                       transition={{ duration: 0.6 }}
                       onError={(e) => {
-                        e.target.src = `https://via.placeholder.com/600x300?text=${step.title}`
+                        e.target.onerror = null;
+                        e.target.src = `https://picsum.photos/600/300`
                       }}
                     />
                   </div>

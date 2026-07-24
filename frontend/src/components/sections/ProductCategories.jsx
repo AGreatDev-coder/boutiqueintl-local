@@ -75,7 +75,8 @@ export default function ProductCategories() {
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                   onError={(e) => {
-                    e.target.src = `https://via.placeholder.com/500x400?text=${product.name}`
+                    e.target.onerror = null;
+                    e.target.src = `https://picsum.photos/500/400`
                   }}
                 />
                 {/* Overlay */}
@@ -189,6 +190,7 @@ export default function ProductCategories() {
                         alt={`${selectedProduct.name} ${apparel.type}`}
                         className="w-full h-full object-cover"
                         onError={(event) => {
+                          event.currentTarget.onerror = null;
                           event.currentTarget.src = selectedProduct.image
                         }}
                       />

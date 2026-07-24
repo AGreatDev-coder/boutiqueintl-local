@@ -57,11 +57,11 @@ export const TIMELINE = [
 
 export const NAV_LINKS = [
   { label: "Home",                     path: "/" },
+  { label: "About Us",                 path: "/about" },
   { label: "Products & Manufacturing", path: "/products-manufacturing" },
   { label: "Quality & Sustainability", path: "/quality-sustainability" },
   { label: "CSR",                      path: "/csr" },
   { label: "Gallery",                  path: "/gallery" },
-  { label: "Get In Touch",             path: "/contact" },
 ];
 
 export const CERTIFICATIONS = [

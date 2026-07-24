@@ -104,38 +104,6 @@ export const CUSTOMIZATION_OPTIONS = [
   },
 ];
 
-export const QUALITY_ASSURANCE = [
-  {
-    check: "Fabric Inspection",
-    description: "100% fabric inspection before cutting",
-    standard: "ISO 9001:2015",
-  },
-  {
-    check: "In-Process QC",
-    description: "Quality checks at every production stage",
-    standard: "ISO 9001:2015",
-  },
-  {
-    check: "Final Inspection",
-    description: "100% final garment inspection before packing",
-    standard: "ISO 9001:2015",
-  },
-  {
-    check: "Testing Laboratory",
-    description: "Physical and chemical testing of garments",
-    standard: "OEKO-TEX, GOTS",
-  },
-  {
-    check: "Defect Rate",
-    description: "Target defect rate: Less than 0.5%",
-    standard: "99.5% Quality",
-  },
-  {
-    check: "Documentation",
-    description: "Complete test reports and certifications",
-    standard: "Third-party verified",
-  },
-];
 
 export const MINIMUM_ORDER_QUANTITIES = [
   {

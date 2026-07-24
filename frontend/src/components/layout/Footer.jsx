@@ -60,7 +60,7 @@ export default function Footer() {
           <motion.div variants={fadeUp}>
             <h3 className="text-cyan-bright font-tenor text-xs tracking-widest font-bold mb-6 uppercase">Navigation</h3>
             <ul className="space-y-3">
-              {NAV_LINKS.slice(0, 5).map((link) => (
+              {NAV_LINKS.slice(0, 3).map((link) => (
                 <li key={link.path}>
                   <Link to={link.path} className="text-slate-600 text-sm hover:text-cyan-bright transition-colors duration-300">
                     {link.label}
@@ -73,7 +73,7 @@ export default function Footer() {
           <motion.div variants={fadeUp}>
             <h3 className="text-cyan-bright font-tenor text-xs tracking-widest font-bold mb-6 uppercase">Company</h3>
             <ul className="space-y-3">
-              {NAV_LINKS.slice(5, 10).map((link) => (
+              {NAV_LINKS.slice(3, 6).map((link) => (
                 <li key={link.path}>
                   <Link to={link.path} className="text-slate-600 text-sm hover:text-cyan-bright transition-colors duration-300">
                     {link.label}

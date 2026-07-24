@@ -56,9 +56,7 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             type="button"
           >
-            <div className="bg-cyan-50/60 rounded-lg px-3 py-2 border border-cyan-100/50">
-              <img src={COMPANY.logo} alt="Boutique International" className="h-10 w-auto" />
-            </div>
+            <img src={COMPANY.logo} alt="Boutique International" className="h-12 w-auto" />
           </motion.button>
 
           <div className="hidden lg:flex items-center gap-5 xl:gap-6">

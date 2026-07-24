@@ -10,6 +10,7 @@ import Cursor  from './components/ui/Cursor'
 
 // Pages
 import Home                  from './pages/Home'
+import About                 from './pages/About'
 import ProductsManufacturing from './pages/ProductsManufacturing'
 import QualitySustainability from './pages/QualitySustainability'
 import CSR                   from './pages/CSR'
@@ -45,6 +46,7 @@ function AppRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/"                       element={<PageWrapper><Home /></PageWrapper>} />
+        <Route path="/about"                  element={<PageWrapper><About /></PageWrapper>} />
         <Route path="/products-manufacturing" element={<PageWrapper><ProductsManufacturing /></PageWrapper>} />
         <Route path="/quality-sustainability" element={<PageWrapper><QualitySustainability /></PageWrapper>} />
         <Route path="/csr"                    element={<PageWrapper><CSR /></PageWrapper>} />

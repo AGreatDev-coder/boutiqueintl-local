@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { QUALITY_ASSURANCE, MINIMUM_ORDER_QUANTITIES, TURNAROUND_TIMELINES } from '../../data/capabilitiesData'
+import { MINIMUM_ORDER_QUANTITIES, TURNAROUND_TIMELINES } from '../../data/capabilitiesData'
 
 export default function QualityAndTimelines() {
   const containerVariants = {
@@ -35,52 +35,6 @@ export default function QualityAndTimelines() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {/* Section 1: Quality Assurance */}
-        <motion.div variants={itemVariants} className="mb-24">
-          <h2 className="text-5xl lg:text-6xl font-display font-bold mb-6 text-slate-900">
-            Quality <span className="text-cyan-gradient">Assurance</span>
-          </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mb-12">
-            Comprehensive QA processes at every stage to ensure excellence
-          </p>
-
-          {/* QA Grid */}
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
-          >
-            {QUALITY_ASSURANCE.map((qa, idx) => (
-              <motion.div
-                key={idx}
-                variants={itemVariants}
-                className="group bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl p-6 border border-cyan-200/50 hover:border-cyan-bright/60 transition-all duration-300"
-                whileHover={{ y: -5, borderColor: '#00D9FF' }}
-              >
-                <h3 className="text-lg font-semibold text-slate-900 mb-3 group-hover:text-cyan-bright transition-colors">
-                  {qa.check}
-                </h3>
-                <p className="text-slate-600 text-sm mb-4 leading-relaxed">
-                  {qa.description}
-                </p>
-                <div className="inline-block bg-cyan-bright/10 text-cyan-bright px-3 py-1 rounded-full text-xs font-semibold border border-cyan-bright/30">
-                  {qa.standard}
-                </div>
-
-                {/* Bottom accent */}
-                <motion.div
-                  className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-cyan-bright to-transparent rounded-b-xl mt-4"
-                  initial={{ width: 0 }}
-                  whileHover={{ width: '100%' }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-
         {/* Divider */}
         <motion.div variants={itemVariants} className="h-1 bg-gradient-to-r from-transparent via-cyan-bright to-transparent my-20" />
 

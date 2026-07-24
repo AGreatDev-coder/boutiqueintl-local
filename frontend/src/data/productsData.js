@@ -6,7 +6,7 @@ export const PRODUCT_CATEGORIES = [
     name: "Men",
     description: "Refined menswear made for casual, formal, and everyday collections",
     icon: "M",
-    image: "https://boutiqueintl.com/wp-content/uploads/2025/02/men.webp",
+    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80",
     color: "#00D9FF",
     items: ["Shirts", "Trousers", "Jackets", "T-Shirts"],
     apparels: [
@@ -16,7 +16,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "BTQSUNFADEDTERRY-290 GSM",
         composition: "100% Cotton",
         metric: "GSM 290",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/02/flat-grey.webp",
+        image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800&q=80",
       },
       {
         code: "BTQ-SPR17-39",
@@ -24,7 +24,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "BTQ-225SNGLETCK-PIQUE",
         composition: "100% Cotton",
         metric: "GSM 230",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/02/dark-blue.webp",
+        image: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=800&q=80",
       },
       {
         code: "BTQ-SPR17-35",
@@ -32,7 +32,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "BTQ-INDIGOTRY-290GSM",
         composition: "100% Indigo Cotton",
         metric: "GSM 290",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/02/blue-chest.webp",
+        image: "https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=800&q=80",
       },
       {
         code: "BTQ-SWT16-14",
@@ -40,7 +40,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "Sweater gauge knit",
         composition: "100% Cotton",
         metric: "Gauge 12gg",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/02/men.webp",
+        image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&q=80",
       },
     ],
   },
@@ -49,7 +49,7 @@ export const PRODUCT_CATEGORIES = [
     name: "Women",
     description: "Premium women's apparel across contemporary and occasion-ready styles",
     icon: "W",
-    image: "https://boutiqueintl.com/wp-content/uploads/2025/02/women.webp",
+    image: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=800&q=80",
     color: "#0080B0",
     items: ["Dresses", "Tops", "Skirts", "Formal Wear"],
     apparels: [
@@ -59,7 +59,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "Stripe knit",
         composition: "55/45 Cotton/Acrylic melange",
         metric: "Gauge 12gg",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/01/STYLE-BTQ-SW-SWTR-front.webp",
+        image: "https://images.unsplash.com/photo-1574169208507-84376144848b?w=800&q=80",
       },
       {
         code: "BTQ-SW-SWTR-2",
@@ -67,7 +67,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "Intarsia knit",
         composition: "55/45 Cotton/Acrylic",
         metric: "Gauge 12gg",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/01/STYLE-BTQ-SW-SWTR-21front-1.webp",
+        image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800&q=80",
       },
       {
         code: "BTQ-SW-SWTR-4",
@@ -75,7 +75,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "Cable knit with fringes",
         composition: "100% Acrylic",
         metric: "Gauge 5gg",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/01/STYLE-BTQ-SW-SWTR-.webp",
+        image: "https://images.unsplash.com/photo-1608063615781-e2ef8c73d114?w=800&q=80",
       },
       {
         code: "BTQ-SW-SWTR-7",
@@ -83,7 +83,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "Jacquard knit with metallic yarn",
         composition: "47% Acrylic, 46% Nylon, 7% Wool",
         metric: "Gauge 7gg",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/01/STYLE-BTQ-SW-SWTR-123.webp",
+        image: "https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?w=800&q=80",
       },
     ],
   },
@@ -92,7 +92,7 @@ export const PRODUCT_CATEGORIES = [
     name: "Infants",
     description: "Soft, safe, and comfortable clothing for infant collections",
     icon: "I",
-    image: "https://boutiqueintl.com/wp-content/uploads/2025/02/InfantsInfants.webp",
+    image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80",
     color: "#38bdf8",
     items: ["Rompers", "Bodysuits", "Sets", "Essentials"],
     apparels: [
@@ -102,7 +102,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "BTQ-1X1RIB-200-YD",
         composition: "100% Cotton",
         metric: "GSM 200",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/01/sky-striped-set.webp",
+        image: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800&q=80",
       },
       {
         code: "BTQ-SPR17-02",
@@ -110,7 +110,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "BTQ-170CORECPS-SLD",
         composition: "58% Cotton, 37% Polyester, 5% Spandex",
         metric: "GSM 170",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/01/white-printed-frock.webp",
+        image: "https://images.unsplash.com/photo-1604467794349-0b74285de7e7?w=800&q=80",
       },
       {
         code: "BTQ-SPR17-11",
@@ -118,7 +118,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "BTQ-2X2CTNRIB-240",
         composition: "100% Cotton",
         metric: "GSM 240",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/01/skirt.webp",
+        image: "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=800&q=80",
       },
       {
         code: "BTQ-SWT18-13",
@@ -126,7 +126,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "Cotton upper with nylon mesh",
         composition: "100% Cotton, 100% Nylon Mesh",
         metric: "Gauge 7gg",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/02/InfantsInfants.webp",
+        image: "https://images.unsplash.com/photo-1622290319146-7b63df48a635?w=800&q=80",
       },
     ],
   },
@@ -135,7 +135,7 @@ export const PRODUCT_CATEGORIES = [
     name: "Kids",
     description: "Durable, comfortable, and playful apparel for growing children",
     icon: "K",
-    image: "https://boutiqueintl.com/wp-content/uploads/2025/02/Kids.webp",
+    image: "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800&q=80",
     color: "#00E5FF",
     items: ["T-Shirts", "Shorts", "Dresses", "Playsets"],
     apparels: [
@@ -145,7 +145,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "Mustang flannel twill",
         composition: "100% Cotton",
         metric: "Gauge 5gg",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/02/cream-check-skirt.webp",
+        image: "https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=800&q=80",
       },
       {
         code: "BTQ-FALL18-16",
@@ -153,7 +153,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "Cotton Terry BTQ-230CTNTRY",
         composition: "100% Cotton",
         metric: "GSM 230",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/02/painted-pattern.webp",
+        image: "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=80",
       },
       {
         code: "BTQ-SPR17-74",
@@ -161,7 +161,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "BTQ-225SNGLETCK-PIQUE",
         composition: "100% Cotton",
         metric: "GSM 225",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/02/purple-shirt.webp",
+        image: "https://images.unsplash.com/photo-1611312449412-6cefac5dc3e4?w=800&q=80",
       },
       {
         code: "BTQ-FALL18-19",
@@ -169,7 +169,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "BTQC/PNEPTRY/310",
         composition: "85% Cotton, 15% Polyester",
         metric: "GSM 310",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/02/Kids.webp",
+        image: "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=800&q=80",
       },
     ],
   },
@@ -178,7 +178,7 @@ export const PRODUCT_CATEGORIES = [
     name: "New Born Blankets",
     description: "Gentle newborn blankets designed for warmth, softness, and care",
     icon: "NB",
-    image: "https://boutiqueintl.com/wp-content/uploads/2025/02/New-Born-Blankets.webp",
+    image: "https://images.unsplash.com/photo-1543294001-f7cbfe92237e?w=800&q=80",
     color: "#0EA5E9",
     items: ["Swaddles", "Receiving Blankets", "Wraps", "Soft Layers"],
     apparels: [
@@ -188,7 +188,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "Chevron pointelle knit",
         composition: "Count 2/30s",
         metric: "Gauge 7gg",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/01/BLANKET-BTQ-02-1.webp",
+        image: "https://images.unsplash.com/photo-1584080310611-5eeeed137cc3?w=800&q=80",
       },
       {
         code: "Blanket BTQ 03",
@@ -196,7 +196,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "Jacquard knit",
         composition: "Count 2/30s",
         metric: "Gauge 12gg",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/01/BLANKET-BTQ-03.webp",
+        image: "https://images.unsplash.com/photo-1584080310611-5eeeed137cc3?w=800&q=80",
       },
       {
         code: "Blanket BTQ 04",
@@ -204,7 +204,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "Transfer knit",
         composition: "Soft newborn knit",
         metric: "Gauge 5gg",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/01/BLANKET-BTQ-04.webp",
+        image: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&q=80",
       },
       {
         code: "Blanket BTQ 06",
@@ -212,7 +212,7 @@ export const PRODUCT_CATEGORIES = [
         fabric: "Single jersey with sherpa lining",
         composition: "100% Cotton shell, 100% Polyester lining",
         metric: "Newborn blanket",
-        image: "https://boutiqueintl.com/wp-content/uploads/2025/01/BLANKET-BTQ-06.webp",
+        image: "https://images.unsplash.com/photo-1580302200318-7f4c471f6c16?w=800&q=80",
       },
     ],
   },
